@@ -46,20 +46,6 @@ public class TextboxSection extends BasePage{
         }else{
             return output.isDisplayed();
         }
-//        if(counter==0){
-//            log.info("Filling form with wrong email");
-//            sendKeysField(email, "fngarcianavagmail.com");
-//            scrollUntilSeeElement(submitBtn);
-//            clickable(submitBtn);
-//            return errorEmail.isDisplayed();
-//        }else{
-//            log.info("Filling form with correct email");
-//            sendKeysField(email, "fngarcianava@gmail.com");
-//            Thread.sleep(2000);
-//            scrollUntilSeeElement(submitBtn);
-//            clickable(submitBtn);
-//        }
-//        return output.isDisplayed();
     }
 
     public void clearFields(){

@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
+import pageObject.CheckboxSection;
 import pageObject.TextboxSection;
 import pageObject.HomePage;
 import pageObject.SecondPage;
@@ -20,6 +21,7 @@ public class BaseTest
     protected static HomePage homePage;
     protected static SecondPage secondPage;
     protected static TextboxSection textboxSection;
+    protected static CheckboxSection checkboxSection;
 
 
     @Parameters({"browser"})

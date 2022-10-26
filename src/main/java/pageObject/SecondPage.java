@@ -36,8 +36,7 @@ public class SecondPage extends BasePage{
                     case "Check Box":
                         clickable(options);
                         CheckboxSection checkboxSection = new CheckboxSection(driver2);
-                        //checkboxSection
-                        break;
+                        return checkboxSection;
                     case "Radio Button":
                         clickable(options);
                         break;
@@ -62,7 +61,7 @@ public class SecondPage extends BasePage{
     //Functions for assertions
     public String getTitleName(){
         waitElementToBeVisible(pageTitle);
-        return pageTitle.getText();
+        return pageTitle.getText().toLowerCase();
     }
     public boolean isExpanded(){
         return accordion.isDisplayed();
