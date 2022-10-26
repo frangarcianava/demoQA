@@ -50,6 +50,12 @@ public class BasePage
         js.executeScript("arguments[0].scrollIntoView();", webElement);
     }
 
+    public void clearRadioButton(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('#yesRadio').checked = false");
+        js.executeScript("document.querySelector('#impressiveRadio').checked = false");
+    }
+
     public void clearTextField(WebElement webElement){
         waitElementToBeVisible(webElement);
         webElement.clear();

@@ -39,7 +39,8 @@ public class SecondPage extends BasePage{
                         return checkboxSection;
                     case "Radio Button":
                         clickable(options);
-                        break;
+                        RadiobuttonSection radiobuttonSection = new RadiobuttonSection(driver2);
+                        return radiobuttonSection;
                     case "Web Tables":
                         break;
                     case "Buttons":

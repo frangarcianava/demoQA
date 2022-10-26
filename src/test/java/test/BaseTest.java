@@ -6,10 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
-import pageObject.CheckboxSection;
-import pageObject.TextboxSection;
-import pageObject.HomePage;
-import pageObject.SecondPage;
+import pageObject.*;
 
 /**
  * Unit test for simple App.
@@ -22,6 +19,7 @@ public class BaseTest
     protected static SecondPage secondPage;
     protected static TextboxSection textboxSection;
     protected static CheckboxSection checkboxSection;
+    protected static RadiobuttonSection radiobuttonSection;
 
 
     @Parameters({"browser"})
@@ -42,4 +40,5 @@ public class BaseTest
     public MyDriver getDriver() {
         return myDriver;
     }
+
 }

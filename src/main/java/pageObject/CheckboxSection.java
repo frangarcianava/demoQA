@@ -58,12 +58,11 @@ public class CheckboxSection extends BasePage{
         return expandedSections.size()==0;
     }
 
-    public boolean clickOnCheckbox(String option) throws InterruptedException {
+    public boolean clickOnCheckbox(String option) {
         clickable(treeExpandButton.get(0));
         for(int i=0;i<treeCheckbox.size();i++) {
             if (treeTitle.get(i).getText().equalsIgnoreCase(option)) {
                 clickable(treeCheckbox.get(i));
-                Thread.sleep(5000);
                 System.out.println("Checkbox selected: "+treeCheckbox.get(i).toString());
                 return treeCheckbox.get(i).isSelected();
             }
