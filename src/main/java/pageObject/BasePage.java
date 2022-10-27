@@ -27,6 +27,10 @@ public class BasePage
         return wait;
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
+
     protected void waitElementToBeVisible(WebElement webElement){
         getWait().until(ExpectedConditions.visibilityOf(webElement));
     }
@@ -54,6 +58,11 @@ public class BasePage
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("document.querySelector('#yesRadio').checked = false");
         js.executeScript("document.querySelector('#impressiveRadio').checked = false");
+    }
+
+    public void hideFooter(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('footer').style.display = 'none'");
     }
 
     public void clearTextField(WebElement webElement){

@@ -3,10 +3,16 @@ package test;
 import driver.MyDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import pageObject.*;
+import pageObject.alertsFrameWindows.BrowserWindows;
+import pageObject.elements.CheckboxSection;
+import pageObject.elements.RadiobuttonSection;
+import pageObject.elements.TextboxSection;
+import pageObject.elements.UploadAndDownloadSection;
 
 /**
  * Unit test for simple App.
@@ -20,6 +26,8 @@ public class BaseTest
     protected static TextboxSection textboxSection;
     protected static CheckboxSection checkboxSection;
     protected static RadiobuttonSection radiobuttonSection;
+    protected static UploadAndDownloadSection uploadAndDownloadSection;
+    protected static BrowserWindows browserWindows;
 
 
     @Parameters({"browser"})
@@ -35,6 +43,11 @@ public class BaseTest
         log.info("Closing...");
         homePage.dispose();
         myDriver.getDriver().quit();
+    }
+
+    @AfterClass
+    public void afterClass(){
+        myDriver.getDriver().navigate().to("https://demoqa.com/");
     }
 
     public MyDriver getDriver() {

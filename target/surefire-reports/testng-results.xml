@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-26T16:15:22 ART" name="Suite" finished-at="2022-10-26T16:15:23 ART" duration-ms="1573">
+  <suite started-at="2022-10-26T17:15:21 ART" name="Suite" finished-at="2022-10-26T17:15:23 ART" duration-ms="1402">
     <groups>
     </groups>
-    <test started-at="2022-10-26T16:15:22 ART" name="ChromeTest" finished-at="2022-10-26T16:15:23 ART" duration-ms="1573">
+    <test started-at="2022-10-26T17:15:21 ART" name="ChromeTest" finished-at="2022-10-26T17:15:23 ART" duration-ms="1402">
       <class name="test.ElementTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ElementTest@878452d]" started-at="2022-10-26T16:15:14 ART" name="setUp" finished-at="2022-10-26T16:15:22 ART" duration-ms="8003" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test.ElementTest@878452d]" started-at="2022-10-26T17:15:13 ART" name="setUp" finished-at="2022-10-26T17:15:21 ART" duration-ms="8286" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="clickOnElementsSection()[pri:1, instance:test.ElementTest@878452d]" started-at="2022-10-26T16:15:22 ART" name="clickOnElementsSection" description="Validate that the elements section is opened" finished-at="2022-10-26T16:15:22 ART" duration-ms="494" status="PASS">
+        <test-method signature="clickOnElementsSection()[pri:1, instance:test.ElementTest@878452d]" started-at="2022-10-26T17:15:21 ART" name="clickOnElementsSection" description="Validate that the elements section is opened" finished-at="2022-10-26T17:15:22 ART" duration-ms="429" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnElementsSection -->
-        <test-method signature="validateRadiobuttonSection()[pri:4, instance:test.ElementTest@878452d]" started-at="2022-10-26T16:15:22 ART" name="validateRadiobuttonSection" description="Validate Radiobutton section" finished-at="2022-10-26T16:15:23 ART" duration-ms="918" status="PASS">
+        <test-method signature="validateRadiobuttonSection()[pri:4, instance:test.ElementTest@878452d]" started-at="2022-10-26T17:15:22 ART" name="validateRadiobuttonSection" description="Validate Radiobutton section" finished-at="2022-10-26T17:15:23 ART" duration-ms="848" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateRadiobuttonSection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.ElementTest@878452d]" started-at="2022-10-26T16:15:23 ART" name="tearDown" finished-at="2022-10-26T16:15:24 ART" duration-ms="239" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.ElementTest@878452d]" started-at="2022-10-26T17:15:23 ART" name="tearDown" finished-at="2022-10-26T17:15:23 ART" duration-ms="243" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

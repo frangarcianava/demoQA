@@ -3,6 +3,11 @@ package pageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pageObject.alertsFrameWindows.BrowserWindows;
+import pageObject.elements.CheckboxSection;
+import pageObject.elements.RadiobuttonSection;
+import pageObject.elements.TextboxSection;
+import pageObject.elements.UploadAndDownloadSection;
 
 import java.util.List;
 
@@ -20,12 +25,17 @@ public class SecondPage extends BasePage{
     @FindBy(css = ".element-list.collapse.show")
     private WebElement accordion;
 
-    @FindBy(css=".element-group:nth-child(1) .element-list.collapse.show .btn.btn-light")
-    private List<WebElement> elementOptions;
+    @FindBy(css=".element-group .btn.btn-light")
+    private List<WebElement> listOfOptions;
+
+    @FindBy(className = "element-group")
+    private List<WebElement> listOfSections;
+
 
     public BasePage clickOnOption(String option){
         log.info("Clicking on " +option+ " option");
-        for(WebElement options : elementOptions){
+        hideFooter();
+        for(WebElement options : listOfOptions){
             if(options.getText().equalsIgnoreCase(option)){
                 clickable(options);
                 switch (options.getText()){
@@ -50,9 +60,15 @@ public class SecondPage extends BasePage{
                     case "Broken Links - Images":
                         break;
                     case "Upload and Download":
-                        break;
-                    case "Dynamic Properties":
-                        break;
+                        scrollUntilSeeElement(options);
+                        clickable(options);
+                        UploadAndDownloadSection uploadAndDownloadSection = new UploadAndDownloadSection(driver2);
+                        return uploadAndDownloadSection;
+                    case "Browser Windows":
+                        scrollUntilSeeElement(options);
+                        clickable(options);
+                        BrowserWindows browserWindows = new BrowserWindows(driver2);
+                        return browserWindows;
             }
             }
         }
@@ -66,9 +82,5 @@ public class SecondPage extends BasePage{
     }
     public boolean isExpanded(){
         return accordion.isDisplayed();
-    }
-
-    public TextboxSection openPage(){
-        return new TextboxSection(driver2);
     }
 }

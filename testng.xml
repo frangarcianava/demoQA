@@ -7,8 +7,8 @@
     </listeners>
     <test name="ChromeTest">
         <classes>
-            <class name="test.ElementTest"/>
-            <!-- <class name="test.AdditionalTests"/> -->
+            <!--<class name="test.ElementTest"/>-->
+            <class name="test.AlertsFrameWindowsTest"/>
         </classes>
     </test>
     <!--<test name="EdgeTest">
