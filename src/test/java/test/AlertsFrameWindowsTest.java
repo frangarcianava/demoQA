@@ -31,6 +31,5 @@ public class AlertsFrameWindowsTest extends BaseTest{
         browserWindows.closeTab();
         browserWindows.clickNewWindow();
 
-
     }
 }

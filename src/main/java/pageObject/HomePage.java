@@ -42,4 +42,12 @@ public class HomePage extends BasePage{
         WebElement element = driver2.findElement(By.xpath(xpath));
         ((JavascriptExecutor)driver2).executeScript("arguments[0].style.visibility='hidden'", element);
     }
+//GETTER SETTER
+    public WebElement getCloseBanner() {
+        return closeBanner;
+    }
+
+    public void setCloseBanner(WebElement closeBanner) {
+        this.closeBanner = closeBanner;
+    }
 }

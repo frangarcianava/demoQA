@@ -1,5 +1,6 @@
 package pageObject;
 
+import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,44 +36,39 @@ public class SecondPage extends BasePage{
     public BasePage clickOnOption(String option){
         log.info("Clicking on " +option+ " option");
         hideFooter();
+        BasePage section = null;
         for(WebElement options : listOfOptions){
             if(options.getText().equalsIgnoreCase(option)){
                 clickable(options);
-                switch (options.getText()){
-                    case "Text Box":
-                        clickable(options);
-                        TextboxSection textboxSection = new TextboxSection(driver2);
-                        return textboxSection;
-                    case "Check Box":
-                        clickable(options);
-                        CheckboxSection checkboxSection = new CheckboxSection(driver2);
-                        return checkboxSection;
-                    case "Radio Button":
-                        clickable(options);
-                        RadiobuttonSection radiobuttonSection = new RadiobuttonSection(driver2);
-                        return radiobuttonSection;
-                    case "Web Tables":
-                        break;
-                    case "Buttons":
-                        break;
-                    case "Links":
-                        break;
-                    case "Broken Links - Images":
-                        break;
-                    case "Upload and Download":
-                        scrollUntilSeeElement(options);
-                        clickable(options);
-                        UploadAndDownloadSection uploadAndDownloadSection = new UploadAndDownloadSection(driver2);
-                        return uploadAndDownloadSection;
-                    case "Browser Windows":
-                        scrollUntilSeeElement(options);
-                        clickable(options);
-                        BrowserWindows browserWindows = new BrowserWindows(driver2);
-                        return browserWindows;
-            }
+                section  = getBasePage(option, options);
+                return section;
             }
         }
-        return null;
+        return section;
+    }
+
+    private BasePage getBasePage(String option, WebElement options) {
+        switch (options.getText()){
+            case "Text Box":
+                clickable(options);
+                return new TextboxSection(driver2);
+            case "Check Box":
+                clickable(options);
+                return new CheckboxSection(driver2);
+            case "Radio Button":
+                clickable(options);
+                return new RadiobuttonSection(driver2);
+            case "Upload and Download":
+                scrollUntilSeeElement(options);
+                clickable(options);
+                return new UploadAndDownloadSection(driver2);
+            case "Browser Windows":
+                scrollUntilSeeElement(options);
+                clickable(options);
+                return new BrowserWindows(driver2);
+            default:
+                throw new InvalidArgumentException(option);
+        }
     }
 
     //Functions for assertions
