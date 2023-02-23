@@ -1,3 +1,3 @@
 # demoQA
 
-Selenium framework to practise in demoQA page.
+Selenium framework to practice in demoQA page.
